@@ -9,6 +9,8 @@ gem 'mysql2'
 
 gem 'fastercsv'
 
+gem 'zipruby'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -1,4 +1,5 @@
 require 'fastercsv'
+require 'zipruby'
 
 class ApiController < ApplicationController
   def get
@@ -26,9 +27,12 @@ class ApiController < ApplicationController
     end
     
     # ファイル名称の設定
-    file_name = "hoge.csv"
+    file_name = Time.now.strftime("%Y%m%d%H%M%S")
+    tmp_zip = "#{RAILS_ROOT}/tmp/zip/#{file_name}.zip"
+    
     # CSVオブジェクトを生成し、データをセットしていく
-    output = FasterCSV.generate(:force_quotes => true) do |csv|
+#    FasterCSV.open(file_name, "w") do |csv|
+    csv_text = FasterCSV.generate(:force_quotes => true) do |csv|
 #    CSV::Writer.generate(output = "") do |csv|
       for shop in @shops
         csv << [shop.id, shop.uid, shop.category, shop.name, shop.address, shop.tel, shop.access, shop.business_hours, 
@@ -36,8 +40,13 @@ class ApiController < ApplicationController
         shop.column04, shop.column05, shop.use_flg, shop.created_at, shop.updated_at]
       end
     end
+    
+    Zip::Archive.open(tmp_zip, Zip::CREATE) do |ar|
+      ar.add_buffer("#{file_name}.csv", NKF.nkf('-U -s -Lw', csv_text))
+    end
+
     # CSVファイルの出力
-    send_data(NKF.nkf('-U -s -Lw', output), :type => cntnt_type, :filename => file_name)
+#    send_data(NKF.nkf('-U -s -Lw', output), :type => cntnt_type, :filename => file_name)
   end
   
   def latest_version
