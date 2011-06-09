@@ -1,0 +1,39 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  uid: 1
+  category: MyString
+  name: MyString
+  address: MyString
+  tel: MyString
+  access: MyString
+  business_hours: MyString
+  holiday: MyString
+  lat: 9.99
+  lng: 9.99
+  pc_url: MyString
+  mobile_url: MyString
+  column01: MyString
+  column02: MyString
+  column03: MyString
+  column04: MyString
+  column05: MyString
+
+two:
+  uid: 1
+  category: MyString
+  name: MyString
+  address: MyString
+  tel: MyString
+  access: MyString
+  business_hours: MyString
+  holiday: MyString
+  lat: 9.99
+  lng: 9.99
+  pc_url: MyString
+  mobile_url: MyString
+  column01: MyString
+  column02: MyString
+  column03: MyString
+  column04: MyString
+  column05: MyString

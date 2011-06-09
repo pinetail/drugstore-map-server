@@ -1,0 +1,85 @@
+<%= form_for(@shop) do |f| %>
+  <% if @shop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
+
+      <ul>
+      <% @shop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uid %><br />
+    <%= f.text_field :uid %>
+  </div>
+  <div class="field">
+    <%= f.label :category %><br />
+    <%= f.text_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br />
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :access %><br />
+    <%= f.text_field :access %>
+  </div>
+  <div class="field">
+    <%= f.label :business_hours %><br />
+    <%= f.text_field :business_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :holiday %><br />
+    <%= f.text_field :holiday %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br />
+    <%= f.text_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :lng %><br />
+    <%= f.text_field :lng %>
+  </div>
+  <div class="field">
+    <%= f.label :pc_url %><br />
+    <%= f.text_field :pc_url %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile_url %><br />
+    <%= f.text_field :mobile_url %>
+  </div>
+  <div class="field">
+    <%= f.label :column01 %><br />
+    <%= f.text_field :column01 %>
+  </div>
+  <div class="field">
+    <%= f.label :column02 %><br />
+    <%= f.text_field :column02 %>
+  </div>
+  <div class="field">
+    <%= f.label :column03 %><br />
+    <%= f.text_field :column03 %>
+  </div>
+  <div class="field">
+    <%= f.label :column04 %><br />
+    <%= f.text_field :column04 %>
+  </div>
+  <div class="field">
+    <%= f.label :column05 %><br />
+    <%= f.text_field :column05 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

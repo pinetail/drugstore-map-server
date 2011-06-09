@@ -1,0 +1,55 @@
+<h1>Listing shops</h1>
+
+<table>
+  <tr>
+    <th>Uid</th>
+    <th>Category</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Tel</th>
+    <th>Access</th>
+    <th>Business hours</th>
+    <th>Holiday</th>
+    <th>Lat</th>
+    <th>Lng</th>
+    <th>Pc url</th>
+    <th>Mobile url</th>
+    <th>Column01</th>
+    <th>Column02</th>
+    <th>Column03</th>
+    <th>Column04</th>
+    <th>Column05</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shops.each do |shop| %>
+  <tr>
+    <td><%= shop.uid %></td>
+    <td><%= shop.category %></td>
+    <td><%= shop.name %></td>
+    <td><%= shop.address %></td>
+    <td><%= shop.tel %></td>
+    <td><%= shop.access %></td>
+    <td><%= shop.business_hours %></td>
+    <td><%= shop.holiday %></td>
+    <td><%= shop.lat %></td>
+    <td><%= shop.lng %></td>
+    <td><%= shop.pc_url %></td>
+    <td><%= shop.mobile_url %></td>
+    <td><%= shop.column01 %></td>
+    <td><%= shop.column02 %></td>
+    <td><%= shop.column03 %></td>
+    <td><%= shop.column04 %></td>
+    <td><%= shop.column05 %></td>
+    <td><%= link_to 'Show', shop %></td>
+    <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
+    <td><%= link_to 'Destroy', shop, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shop', new_shop_path %>
