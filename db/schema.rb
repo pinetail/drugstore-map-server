@@ -10,10 +10,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110609034343) do
+ActiveRecord::Schema.define(:version => 20110609061935) do
 
   create_table "shops", :force => true do |t|
-    t.integer  "uid"
+    t.string   "uid",                                            :default => "0.0"
     t.string   "category"
     t.string   "name"
     t.string   "address"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20110609034343) do
     t.string   "column05"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "use_flg"
   end
 
 end
