@@ -1,6 +1,10 @@
 DrugstoreMap::Application.routes.draw do
   get "api/export"
 
+  get "api/get"
+  
+  get "api/latest_version"
+  
   resources :shops
 
   # The priority is based upon order of creation:
