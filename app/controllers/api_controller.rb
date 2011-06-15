@@ -28,7 +28,7 @@ class ApiController < ApplicationController
     
     # ファイル名称の設定
     file_name = Time.now.strftime("%Y%m%d%H%M%S")
-    tmp_zip = "#{RAILS_ROOT}/tmp/zip/#{file_name}.zip"
+    tmp_zip = "#{RAILS_ROOT}/public/system/files/#{file_name}.zip"
     
     # CSVオブジェクトを生成し、データをセットしていく
 #    FasterCSV.open(file_name, "w") do |csv|
